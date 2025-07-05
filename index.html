@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <!--
+    Define o conjunto de caracteres, favicon, viewport para responsividade,
+    descrição para SEO e título da página.
+    Importa o arquivo de estilos principal.
+  -->
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Experimente o melhor café artesanal com toques científicos no Cafélab. Cold brew, espresso e mais.">
+  <meta name="keywords" content="cafeteria, café, Recife, artesanal, cardápio, cafeteria temática, CaféLab">
+  <meta name="author" content="CaféLab">
+
+  <meta property="og:title" content="CaféLab | Café artesanal e ciência do sabor">
+  <meta property="og:description" content="Experimente o melhor café artesanal com toques científicos no Cafélab.">
+  <meta property="og:image" content="img/logo-bg.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seudominio.com/">
+
+  <title>CaféLab | Café artesanal e ciência do sabor</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!--
+    Navbar: será carregada dinamicamente via jQuery a partir de um componente externo.
+    Responsável pela navegação principal do site.
+  -->
+  <nav class="flex flex-wrap items-center justify-between bg-amber-900 md:pr-3" id="navbar"></nav>
+
+  <!-- Conteúdo principal da página -->
+  <main>
+    <!--
+      Seção de apresentação da cafeteria:
+      - Imagem de fundo com sobreposição escura.
+      - Título, descrição e botão de chamada para ação ("Venha nos Conhecer").
+    -->
+    <section>
+      <div class="relative h-screen text-white overflow-hidden ">
+        <div class="absolute inset-0">
+          <img src="img/ft_cafe.jpg" alt="Imagem da Cafeteria ao fundo"
+            class="object-cover object-center w-full h-full">
+          <div class="absolute inset-0 bg-black opacity-30"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center ">
+          <h1 class="text-5xl font-bold leading-tight mb-4">Bem-Vindo(a) ao CaféLab</h1>
+          <p class="md:text-lg text-gray-300 mb-8">
+            Uma cafeteria moderna e experimental, onde o café é tratado como uma arte e uma ciência.</p>
+          <a href="#contato"
+            class="bg-amber-900 text-white hover:bg-amber-600 py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+            Venha nos Conhecer</a>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Seção de prévia do cardápio:
+      - Título e chamada para conhecer os produtos.
+      - Espaço para exibir bebidas (preenchido dinamicamente).
+      - Botão para acessar o cardápio completo.
+    -->
+    <section class="bg-amber-900 pb-10" id="cardapio">
+      <div class="text-center pt-10 text-white">
+        <p class="font-bold break-normal text-3xl tracking-wider lg:text-4xl font-sans">CONHEÇA NOSSOS PRODUTOS</p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center pt-10">
+        <div id="menu-bebidas" class="flex flex-wrap items-center justify-center"></div>
+      </div>
+      <div class=" flex justify-center pt-10 pb-20">
+        <a href="cardapio.html"
+          class="bg-amber-900 text-white hover:bg-amber-600 py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg ">
+          Ver Cardápio Completo
+        </a>
+      </div>
+    </section>
+
+    <!--
+      Seção "Nossa História":
+      - Texto contando a história da cafeteria.
+      - Galeria de imagens ilustrativas.
+    -->
+    <section class="py-20 bg-white" id="sobre">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="md:flex items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+            <h2 class="text-3xl font-bold text-amber-800 mb-6 uppercase">Nossa História</h2>
+            <p class="text-amber-700 mb-4 text-justify">Desde os primeiros cafés fumegantes preparados em casa até os
+              laboratórios modernos de sabores que vemos hoje, o CaféLab nasceu da união entre tradição e inovação.</p>
+            <p class="text-amber-700 mb-4 text-justify">Inspirada na atmosfera criativa dos cafés europeus do século XIX
+              —
+              onde artistas, cientistas e escritores se reuniam para trocar ideias —, nossa cafeteria foi criada como um
+              espaço para experimentar, saborear e compartilhar. Aqui, o café não é apenas uma bebida: é um processo, um
+              estudo, uma paixão.</p>
+            <p class="text-amber-700 mb-4 text-justify">Cada xícara servida no CaféLab é resultado de testes,
+              combinações
+              e descobertas feitas com carinho. Nossos baristas são verdadeiros alquimistas modernos, buscando o
+              equilíbrio perfeito entre aroma, sabor e apresentação.</p>
+            <p class="text-amber-700 text-justify">Mais do que um café, o CaféLab é um ponto de encontro para mentes
+              curiosas, paladares exigentes e corações quentinhos.</p>
+          </div>
+          <div class="md:w-1/2">
+            <div class="grid grid-cols-2 gap-4">
+              <img src="img/cf_1.jpg" alt="cadeira de branca com mesa e xicara café"
+                class="rounded-lg shadow-lg h-64 w-full object-cover">
+              <img src="img/cf_2.jpg" alt="Barista fazendo café"
+                class="rounded-lg shadow-lg h-64 w-full object-cover">
+              <img src="img/cf_3.jpg" alt="Coffee beans" class="rounded-lg shadow-lg h-64 w-full object-cover">
+              <img src="img/cf_4.jpg" alt="xicaras tomando café"
+                class="rounded-lg shadow-lg h-64 w-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Seção de reviews de clientes:
+      - Título e três cards com depoimentos de clientes.
+      - Fundo com imagem e efeito de desfoque nos cards.
+    -->
+    <section class="bg-[url(img/fundo_cafe.jpg)] bg-auto pt-10 pb-10" id="reviews">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="uppercase tracking-wider mb-8 text-white font-bold text-3xl text-center">O que nossos clientes estão
+          dizendo</h2>
+        <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 relative text-white">
+          <!-- Card review 1 -->
+          <div class="bg-white/10 backdrop-blur-lg rounded-lg p-8 text-center md:w-1/3 outline outline-amber-500">
+            <p class="font-bold uppercase pb-2 ">Juliana Mendes – @ju_mendes</p>
+            <p class="text-xl font-light italic text-zinc-200 text-center">
+              "Simplesmente encantada com o CaféLab! O ambiente é criativo, aconchegante e diferente de qualquer
+              cafeteria
+              que já visitei. Pedi o Latte Molecular e fiquei surpresa com a apresentação — servido em um copo de
+              laboratório com espuma perfeita! O Brownie Quântico é um absurdo de bom. Atendimento nota mil. Já virou
+              meu
+              lugar favorito pra trabalhar e relaxar."
+            </p>
+          </div>
+          <!-- Card review 2 -->
+          <div class="bg-white/10 backdrop-blur-lg rounded-lg p-8 text-center md:w-1/3 outline outline-amber-500">
+            <p class="font-bold uppercase pb-2 ">Rafael Costa – @rafa_coffeegeek</p>
+            <p class="text-xl font-light italic text-zinc-200 text-center">
+              "A proposta de misturar ciência e café é genial! Me senti em um laboratório de sabores. O C8H10N4O2
+              Espresso
+              é forte e bem tirado, com um aroma intenso. A vibe do lugar é moderna, com música suave e decoração muito
+              original. Só acho que o Croissant Isotérmico poderia vir com mais recheio, mas no geral foi uma ótima
+              experiência."
+            </p>
+          </div>
+          <!-- Card review 3 -->
+          <div class="bg-white/10 backdrop-blur-lg rounded-lg p-8 text-center md:w-1/3 outline outline-amber-500">
+            <p class="font-bold uppercase pb-2 ">Letícia Amaral – @le_amarl</p>
+            <p class="text-xl font-light italic text-zinc-200 text-center">
+              "Lugar maravilhoso para um encontro com amigas! Pedi o Bolo de Partículas e achei uma fofura: servido em
+              um
+              vidro estilo tubo de ensaio, com camadas perfeitas de red velvet. A equipe é super simpática e atenciosa.
+              Dei uma volta pelo ambiente e achei genial o quadro com fórmulas de café. Já indiquei pra todo mundo!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Seção de localização e contato:
+      - Título, informações de contato (endereço, telefone, e-mail).
+      - Horários de funcionamento.
+      - Imagem ilustrativa da cafeteria.
+      - Possui id="contato" para navegação direta.
+    -->
+    <section id="contato" class="bg-amber-900 py-20" title="Ir para contato" aria-label="Ir para a seção de contato">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center uppercase text-white mb-12">Visite-nos</h2>
+        <div class="md:flex ">
+          <!-- Informações de contato -->
+          <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+            <div class="bg-white/10 backdrop-blur-lg rounded-lg p-8 outline outline-amber-500 ">
+              <h3 class="text-2xl font-semibold text-center uppercase text-white mb-4">Informações para Contato</h3>
+              <div class="flex flex-col items-center">
+                <div class=" text-white">
+                  <p>Rua Sport Clube do Recife, Madalena, Recife-PE</p>
+                </div>
+                <div class="text-white">
+                  <p>(81) 9 9123-4567</p>
+                </div>
+                <div class="text-white">
+                  <p>ctt_cafelab@cafelab.com</p>
+                </div>
+              </div>
+            </div>
+            <!-- Horários de funcionamento -->
+            <h3 class="text-2xl font-semibold text-white m-auto uppercase text-center pt-4 pb-4">Horários de
+              Funcionamento</h3>
+            <div class="space-y-2 text-white">
+              <div class="flex justify-between">
+                <span>Segunda - Sexta</span>
+                <span>08:00 - 22:00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Sábado</span>
+                <span>08:00 - 16:00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Domingo</span>
+                <span>08:00 - 13:00 </span>
+              </div>
+            </div>
+          </div>
+          <!-- Imagem da cafeteria -->
+          <div class="md:w-1/2">
+            <div class="rounded-lg overflow-hidden">
+              <img src="img/ft_cft.jpg" alt="Ilustração da cafeteria">
+            </div>
+          </div>
+        </div>
+        <!-- chamada para formulario de contato-->
+        <div class="flex justify-center pt-20">
+          <a href="contato_form.html"
+            class="bg-amber-600 text-white hover:bg-amber-400 py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+            Formulário para Contato</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Botão flutuante para voltar ao topo da página.
+    Fica fixo no canto inferior direito.
+  -->
+  <div class="fixed bottom-0 right-0 p-4" id="btn-to-top"><button id="to-top-btn" onclick="goToTop()"
+      title="Ir para o Topo"
+      class="hidden fixed z-50 bottom-10 right-10 p-4 border-0 w-14 h-14 rounded-full shadow-md bg-amber-600 hover:bg-amber-400 text-white text-lg font-semibold transition-colors duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
+      </svg>
+      <span class="sr-only">Go to top</span>
+    </button>
+  </div>
+
+  <!--
+    Footer: carregado dinamicamente via jQuery a partir de um componente externo.
+    Contém informações finais do site.
+  -->
+  <footer class="bg-amber-950 text-white py-4" id="footer"></footer>
+
+  <!--
+    Scripts:
+    - jQuery para manipulação do DOM e carregamento dinâmico de componentes.
+    - produtos.js: provavelmente para carregar produtos do cardápio.
+    - main.js: scripts gerais do site.
+    - Script inline para carregar navbar e footer dinamicamente.
+  -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/produtos.js "></script>
+  <script src="js/main.js "></script>
+  <script>
+    // Carrega o conteúdo do navbar_item.html no elemento com id "navbar"
+    $('#navbar').load('components/navbar_item.html');
+
+    // Carrega o conteúdo do footer_item.html no elemento com id "footer"
+    $('#footer').load('components/footer_item.html');
+  </script>
+</body>
+
+</html>

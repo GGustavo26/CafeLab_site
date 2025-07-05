@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    
+    <!--
+    Define o conjunto de caracteres, favicon, viewport para responsividade,
+    descrição para SEO e título da página.
+    Importa o arquivo de estilos principal.
+  -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Experimente o melhor café artesanal com toques científicos no Cafélab. Cold brew, espresso e mais.">
+    <meta name="keywords" content="cafeteria, café, Recife, artesanal, cardápio, cafeteria temática, CaféLab">
+    <meta name="author" content="CaféLab">
+
+    <meta property="og:title" content="CaféLab | Café artesanal e ciência do sabor">
+    <meta property="og:description" content="Experimente o melhor café artesanal com toques científicos no Cafélab.">
+    <meta property="og:image" content="img/logo-bg.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seudominio.com/">
+
+    <title>CaféLab | Café artesanal e ciência do sabor</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="flex flex-wrap items-center justify-between bg-amber-900 pr-3" id="navbar"></nav>
+
+    <!-- main content -->
+    <main>
+        <!-- seção de menu -->
+        <section class="bg-[url(img/fundo_cafe.jpg)] lg:p-auto md:p-10">
+            <div class="bg-white/10 backdrop-blur-lg rounded-lg p-5 text-center outline outline-amber-500">
+                <!-- título do menu -->
+                <div class="text-center pt-10 pb-10 text-white">
+                    <p class="font-bold break-normal text-3xl tracking-wider md:text-5xl font-sans uppercase">Cardápio
+                    </p>
+                </div>
+
+                <!-- subtitulo bebidas -->
+                <div class="text-center pt-10 pb-10 text-white">
+                    <p
+                        class="font-bold break-normal text-2xl tracking-wider md:text-3xl font-sans uppercase border-dashed border-t-2 border-amber-500 pt-10">
+                        Bebidas
+                    </p>
+                </div>
+                <!-- apresentação dos produtos -->
+                <!-- bebidas -->
+                <div class="flex flex-wrap items-center justify-center">
+                    <!-- adição de conteudo dinamco via jquery -->
+                    <div id="menu-bebidas" class="flex flex-wrap items-center justify-center"></div>
+                </div>
+
+                <!-- subtitulo comidas -->
+                <div class="text-center pt-10 pb-10 text-white ">
+                    <p
+                        class="font-bold break-normal text-2xl tracking-wider md:text-3xl font-sans uppercase border-dashed border-t-2 border-amber-500 pt-10 ">
+                        Comidas
+                    </p>
+                </div>
+
+                <!-- comidas -->
+                <div class="flex flex-wrap items-center justify-center">
+                    <!-- adição de conteudo dinamco via jquery -->
+                    <div id="menu-comidas" class="flex flex-wrap items-center justify-center"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- botão de voltar ao topo -->
+    <div class="lg:hidden fixed bottom-0 right-0 p-4" id="btn-to-top"><button id="to-top-btn" onclick="goToTop()"
+            title="Ir para o Topo"
+            class="hidden fixed z-50 bottom-10 right-10 p-4 border-0 w-14 h-14 rounded-full shadow-md bg-white hover:bg-amber-400 text-white text-lg font-semibold transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                class="w-6 h-6 bg-amber-400">
+                <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
+            </svg>
+            <span class="sr-only">Go to top</span>
+        </button>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-amber-950 text-white py-4" id="footer"></footer>
+
+    <!-- script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/produtos.js "></script>
+    <script src="js/main.js "></script>
+    <script>
+        // Carrega o conteúdo do navbar_item.html no elemento com id "navbar"
+        $('#navbar').load('components/navbar_item.html');
+
+        // Carrega o conteúdo do footer_item.html no elemento com id "footer"
+        $('#footer').load('components/footer_item.html');
+    </script>
+</body>
+
+</html>

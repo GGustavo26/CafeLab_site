@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <!--
+    Define o conjunto de caracteres, favicon, viewport para responsividade,
+    descrição para SEO e título da página.
+    Importa o arquivo de estilos principal.
+  -->
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Experimente o melhor café artesanal com toques científicos no Cafélab. Cold brew, espresso e mais.">
+    <meta name="keywords" content="cafeteria, café, Recife, artesanal, cardápio, cafeteria temática, CaféLab">
+    <meta name="author" content="CaféLab">
+
+    <meta property="og:title" content="CaféLab | Café artesanal e ciência do sabor">
+    <meta property="og:description" content="Experimente o melhor café artesanal com toques científicos no Cafélab.">
+    <meta property="og:image" content="img/logo-bg.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seudominio.com/">
+
+    <title>CaféLab | Café artesanal e ciência do sabor</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!--
+    Navbar: será carregada dinamicamente via jQuery a partir de um componente externo.
+    Responsável pela navegação principal do site.
+  -->
+    <nav class="flex flex-wrap items-center justify-between bg-amber-900 md:pr-3" id="navbar"></nav>
+
+    <!-- Conteúdo principal da página -->
+    <main class="flex-1 bg-[url(img/bg-form.jpg)] bg-auto p-5 md:p-15 ">
+        <!-- area de contatos e formmulario -->
+        <section class="flex items-center justify-center">
+            <div class="bg-white/10 backdrop-blur-lg rounded-lg p-3 md:p-20 text-center outline outline-amber-500">
+                <div
+                    class="flex flex-col md:flex-row lg:max-w-5xl w-full px-5 py-12 md:py-24 mx-auto section bg-amber-500 rounded-lg shadow-lg">
+                    <div class="md:w-1/3">
+                        <h1 class="text-4xl text-white sm:text-4xl font-bold title-font mb-4 uppercase">Fale Conosco
+                        </h1>
+                        <p class="leading-relaxed text-xl text-white">
+                            Estamos aqui para ajudar você! <br> Se tiver alguma dúvida ou precisar de assistência,
+                            sinta-se à
+                            vontade para entrar em contato conosco.
+                            <br><br>
+                        <p class="leading-relaxed text-md text-white">Você também pode nos enviar um e-mail <a
+                                href="ctt_cafelab@cafelab.com"
+                                class="font-semibold border-amber-50 border-b-2">ctt_cafelab@cafelab.com</a>
+                        </p>
+                        </p>
+                    </div>
+                    <div class="md:w-2/3 w-full mt-10 md:mt-0 md:pl-28">
+                        <h1 class="text-4xl text-white sm:text-4xl font-bold title-font mb-4 uppercase">Formulário para
+                            Contato</h1>
+                        <form id="form-contato" class="space-y-4">
+                            <div class="flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0">
+                                <input type="text" name="nome" placeholder="Seu Nome"
+                                    class="w-full px-4 py-2 rounded-lg bg-white/20 text-white focus:outline-white focus:ring-2 focus:ring-amber-500 outline-2 outline-orange-500"
+                                    required>
+                                <input type="email" name="email" placeholder="Seu E-mail"
+                                    class="w-full px-4 py-2 rounded-lg bg-white/20 text-white focus:outline-white focus:ring-2 focus:ring-amber-500 outline-2 outline-orange-500"
+                                    required>
+                            </div>
+                            <textarea name="mensagem" rows="5" placeholder="Sua Mensagem"
+                                class="w-full px-4 py-2 rounded-lg bg-white/20 text-white focus:outline-white focus:ring-2 focus:ring-amber-500 outline-2 outline-orange-500"
+                                required></textarea>
+                            <button type="submit"
+                                class="w-full px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition duration-300 ease-in-out transform hover:scale-103 hover:shadow-lg">Enviar
+                                Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--
+    Footer: carregado dinamicamente via jQuery a partir de um componente externo.
+    Contém informações finais do site.
+  -->
+    <footer class="bg-amber-950 text-white py-4" id="footer"></footer>
+
+
+    <div id="alerta-overlay"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] p-5">
+        <div id="alerta-box" class="bg-amber-800 text-white  px-1.5 py-3.5 rounded-lg shadow-xl max-w-sm text-center flex flex-col ">
+            <p id="alerta-msg" class="flex"></p>
+            <button onclick="fecharAlerta()"
+                class="mt-4 px-4 py-2 bg-amber-600 text-white rounded hover:bg-amber-400 transition">
+                OK
+            </button>
+        </div>
+    </div>
+
+    <!--
+    Scripts:
+    - jQuery para manipulação do DOM e carregamento dinâmico de componentes.
+    - produtos.js: provavelmente para carregar produtos do cardápio.
+    - main.js: scripts gerais do site.
+    - Script inline para carregar navbar e footer dinamicamente.
+  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/produtos.js"></script>
+    <script src="js/validacao_form.js "></script>
+    <script src="js/main.js "></script>
+    <script>
+        
+
+        // Carrega o conteúdo do navbar_item.html no elemento com id "navbar"
+        $('#navbar').load('components/navbar_item.html');
+
+        // Carrega o conteúdo do footer_item.html no elemento com id "footer"
+        $('#footer').load('components/footer_item.html');
+    </script>
+</body>
+
+</html>
