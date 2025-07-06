@@ -1,0 +1,65 @@
+/* 404 Page Styles */
+
+/* Container geral */
+.page-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #fff3e0; 
+  font-family: Arial, sans-serif;
+}
+
+/* Conteúdo centralizado */
+.page-404__content {
+  text-align: center;
+  padding: 16px;
+}
+
+/* Código de erro */
+.page-404__code {
+  font-size: 4rem;         
+  font-weight: bold;
+  color: #c47f00;          
+  margin: 0 0 0.5em;
+}
+
+/* Mensagem de erro */
+.page-404__message {
+  font-size: 1.25rem;      
+  color: #333;
+  margin: 0 0 1.5em;
+}
+
+/* Botão de retorno */
+.page-404__btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #c47f00;   
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;           
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+}
+
+.page-404__btn:hover {
+  background-color: #f0a500;    
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .page-404__code {
+    font-size: 3rem;
+  }
+  .page-404__message {
+    font-size: 1rem;
+  }
+  .page-404__btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
