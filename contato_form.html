@@ -2,13 +2,17 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8" />
+    
     <!--
     Define o conjunto de caracteres, favicon, viewport para responsividade,
     descrição para SEO e título da página.
     Importa o arquivo de estilos principal.
-  -->
-    <meta charset="UTF-8" />
-    
+    -->
+
+    <!-- favicon padrão -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="Experimente o melhor café artesanal com toques científicos no Cafélab. Cold brew, espresso e mais.">
@@ -90,7 +94,8 @@
 
     <div id="alerta-overlay"
         class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] p-5">
-        <div id="alerta-box" class="bg-amber-800 text-white  px-1.5 py-3.5 rounded-lg shadow-xl max-w-sm text-center flex flex-col ">
+        <div id="alerta-box"
+            class="bg-amber-800 text-white  px-1.5 py-3.5 rounded-lg shadow-xl max-w-sm text-center flex flex-col ">
             <p id="alerta-msg" class="flex"></p>
             <button onclick="fecharAlerta()"
                 class="mt-4 px-4 py-2 bg-amber-600 text-white rounded hover:bg-amber-400 transition">
@@ -111,7 +116,7 @@
     <script src="js/validacao_form.js "></script>
     <script src="js/main.js "></script>
     <script>
-        
+
 
         // Carrega o conteúdo do navbar_item.html no elemento com id "navbar"
         $('#navbar').load('components/navbar_item.html');
